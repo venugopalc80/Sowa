@@ -33,25 +33,25 @@ footer{background:var(--ink);color:#fff;padding:55px 22px}.foot{max-width:1180px
 </style>
 </head>
 <body>
-<div class="top">NOW ACCEPTING WEDDING & EVENT CATERING ENQUIRIES • SC • NC • GA</div>
+<div class="top">SOWA • 102 N LAWRENCE ST, LYMAN, SC • CATERING SINCE 2014</div>
 <nav><div class="navin">
 <a href="#home" class="brand">
 <svg class="miniowl" viewBox="0 0 100 100" aria-label="SOWA owl chef logo"><path fill="none" stroke="currentColor" stroke-width="7" d="M20 47C11 31 18 12 34 18C45 4 55 4 66 18C82 12 89 31 80 47V74C80 88 20 88 20 74Z"/><circle cx="38" cy="48" r="13" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="62" cy="48" r="13" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="38" cy="48" r="4"/><circle cx="62" cy="48" r="4"/><path d="M47 58L53 58L50 64Z"/><path fill="none" stroke="currentColor" stroke-width="6" d="M29 20C27 9 38 5 46 14C54 5 67 9 68 20"/></svg>
 <span>SOWA</span></a>
 <div class="links"><a href="#restaurant">Restaurant</a><a href="#catering">Wedding Catering</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div>
-<div class="navactions"><button class="btn dark" onclick="openCart()">Order Online <span class="count" id="count">0</span></button></div>
+<div class="navactions"><a class="btn outline" href="https://www.sowarest.com/reservations" target="_blank" rel="noopener">Reserve</a><button class="btn dark" onclick="openCart()">Order Concept <span class="count" id="count">0</span></button></div>
 </div></nav>
 
 <main>
-<section id="home" class="hero"><div class="heroIn"><div class="eyebrow">Restaurant • Weddings • Events</div><h1>Food made with love. Gatherings made memorable.</h1><p>European-inspired food, warm hospitality and wedding catering from our home in Lyman, South Carolina.</p><div class="heroBtns"><a class="btn gold" href="#restaurant">Explore the Restaurant</a><a class="btn outline" href="#catering">Plan Your Wedding</a></div></div></section>
+<section id="home" class="hero"><div class="heroIn"><div class="eyebrow">Restaurant • Catering • Events</div><h1>Food made with love. Gatherings made memorable.</h1><p>A refreshed digital experience for SOWA — bringing the restaurant menu, reservations and catering enquiries into one clear customer journey.</p><div class="heroBtns"><a class="btn gold" href="#restaurant">Explore the Menu</a><a class="btn outline" href="#catering">Plan Your Event</a></div></div></section>
 
 <div class="split">
-<div class="card"><div class="kicker">Dine with us</div><h2>Restaurant</h2><p>Come hungry. Stay for the food, the atmosphere and the people. Browse our menu, reserve a table or order your favourites online.</p><a class="smalllink" href="#restaurant">View menu →</a></div>
-<div class="card"><div class="kicker" style="color:#e9c98e">Celebrate with us</div><h2>Wedding Catering</h2><p>From intimate gatherings to full wedding celebrations, SOWA brings thoughtful food and hospitality to your special day.</p><a class="smalllink" href="#catering">Explore catering →</a></div>
+<div class="card"><div class="kicker">Dine with us</div><h2>Restaurant</h2><p>Explore the real SOWA menu, discover dishes through photography and take the next step — reserve a table or enquire about ordering.</p><a class="smalllink" href="#restaurant">View menu →</a></div>
+<div class="card"><div class="kicker" style="color:#e9c98e">Celebrate with us</div><h2>Catering & Events</h2><p>From intimate gatherings to larger celebrations, make a catering enquiry with the key event details in one place.</p><a class="smalllink" href="#catering">Explore catering →</a></div>
 </div>
 
-<section id="restaurant"><div class="container"><div class="sectionhead"><div><div class="kicker">The restaurant</div><h2 class="title">Order something<br>worth sharing.</h2></div><div class="intro">A selection of SOWA favourites for dine-in and online ordering. This demo menu can be replaced with the client's final menu, prices and photographs.</div></div>
-<div class="menuTabs"><button class="tab active" onclick="filterMenu('all',this)">All</button><button class="tab" onclick="filterMenu('mains',this)">Mains</button><button class="tab" onclick="filterMenu('salads',this)">Salads & Soups</button><button class="tab" onclick="filterMenu('desserts',this)">Desserts</button></div>
+<section id="restaurant"><div class="container"><div class="sectionhead"><div><div class="kicker">The restaurant</div><h2 class="title">A menu built<br>to be explored.</h2></div><div class="intro">These are real dishes from SOWA's current public menu. Prices are intentionally not shown rather than inventing figures.</div></div>
+<div class="menuTabs"><button class="tab active" onclick="filterMenu('main',this)">Main Menu</button><button class="tab" onclick="filterMenu('salads',this)">Salads</button><button class="tab" onclick="filterMenu('seafood',this)">Sea Food</button></div>
 <div class="menugrid" id="menu"></div>
 </div></section>
 
@@ -77,15 +77,20 @@ footer{background:var(--ink);color:#fff;padding:55px 22px}.foot{max-width:1180px
 
 <script>
 const items=[
-{name:'Chicken Schnitzel',cat:'mains',price:18,desc:'Crispy chicken, seasonal sides and house sauce.',img:'https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=500&q=80'},
-{name:'Grilled Salmon',cat:'mains',price:24,desc:'Grilled salmon with vegetables and a bright herb dressing.',img:'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=500&q=80'},
-{name:'SOWA Garden Salad',cat:'salads',price:12,desc:'Fresh greens, vegetables, herbs and house dressing.',img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80'},
-{name:'Creamy Soup',cat:'salads',price:9,desc:"Chef's seasonal soup served warm with fresh bread.",img:'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=500&q=80'},
-{name:'Berry Crepe',cat:'desserts',price:10,desc:'Warm crepe, berries, cream and a light dusting of sugar.',img:'https://images.unsplash.com/photo-1519676867240-f03562e2fbd6?auto=format&fit=crop&w=500&q=80'},
-{name:'Chocolate Dessert',cat:'desserts',price:9,desc:'Rich chocolate dessert finished with seasonal garnish.',img:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80'}
-];
+{name:"Green Herb Potatoes",cat:"main",desc:"Tender chunks of boiled potatoes, seasoned with fresh dill and herbs.",img:"https://static.wixstatic.com/media/edf174_5c7d6373232b453c9f845388336fd790~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85/edf174_5c7d6373232b453c9f845388336fd790~mv2.jpg"},
+{name:"Veggie Fusion Rice",cat:"main",desc:"Fluffy rice with carrots, peas, green beans and sweet corn.",img:"https://static.wixstatic.com/media/edf174_72fc68ed42634e0992d917e88c48d1c2~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85/edf174_72fc68ed42634e0992d917e88c48d1c2~mv2.jpg"},
+{name:"Stewed Beef",cat:"main",desc:"Beef slow-cooked in rich butter with tender carrots.",img:"https://static.wixstatic.com/media/edf174_161b26f3fe084d20ab749cbf0c09c10b~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85/edf174_161b26f3fe084d20ab749cbf0c09c10b~mv2.jpg"},
+{name:"Lamb ribs",cat:"main",desc:"Marinated lamb ribs, grilled to perfection.",img:"https://static.wixstatic.com/media/edf174_abeb01ebd57a4cd6b8418acc88ba4015~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85/edf174_abeb01ebd57a4cd6b8418acc88ba4015~mv2.jpg"},
+{name:"Chicken kebab",cat:"main",desc:"Succulent chicken pieces grilled to perfection.",img:"https://static.wixstatic.com/media/edf174_6c714339ae0e45ad8eff517ec3652229~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85/edf174_6c714339ae0e45ad8eff517ec3652229~mv2.jpg"},
+{name:"Orange Glazed Chicken",cat:"main",desc:"Juicy chicken glazed with a sweet orange sauce.",img:"https://static.wixstatic.com/media/edf174_1c9a136df91840e0b0e7b90c70211b85~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85/edf174_1c9a136df91840e0b0e7b90c70211b85~mv2.jpg"},
+{name:"Crispy Bacon Chicken",cat:"main",desc:"Chicken wrapped in crispy bacon and topped with Parmesan.",img:"https://static.wixstatic.com/media/edf174_94bdbe7420bd4ad6b04160fc3388cea2~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85/edf174_94bdbe7420bd4ad6b04160fc3388cea2~mv2.jpg"},
+{name:"Scarlet Symphony",cat:"salads",desc:"Arugula, strawberries, feta, pomegranate, pine nuts and beets.",img:"https://static.wixstatic.com/media/edf174_c4e173b68add4373bdc4825b48e228aa~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85/edf174_c4e173b68add4373bdc4825b48e228aa~mv2.jpg"},
+{name:"Caprese",cat:"salads",desc:"Cherry tomatoes and mozzarella with a sweet and sour glaze.",img:"https://static.wixstatic.com/media/edf174_0801cf0520c54940a29921a69a4c94bd~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85/edf174_0801cf0520c54940a29921a69a4c94bd~mv2.jpg"},
+{name:"Green & Shrimp",cat:"salads",desc:"Shrimp stir-fried with green beans, bell peppers and sweet-savoury sauce.",img:"https://static.wixstatic.com/media/edf174_72fc68ed42634e0992d917e88c48d1c2~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85/edf174_72fc68ed42634e0992d917e88c48d1c2~mv2.jpg"},
+{name:"Korean sea food",cat:"seafood",desc:"Shrimp, mussels and calamari marinated with Korean spices.",img:"https://static.wixstatic.com/media/edf174_a49105e63b5e4e1bb0c5f20e6ead5671~mv2.png/v1/fill/w_500,h_500,al_c,q_85/edf174_a49105e63b5e4e1bb0c5f20e6ead5671~mv2.png"},
+{name:"Crab Salad",cat:"seafood",desc:"Crab meat, cauliflower, cucumber and red onion in creamy dressing.",img:"https://static.wixstatic.com/media/edf174_0801cf0520c54940a29921a69a4c94bd~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85/edf174_0801cf0520c54940a29921a69a4c94bd~mv2.jpg"}];
 let cart={};
-function renderMenu(filter='all'){const el=document.getElementById('menu');el.innerHTML=items.filter(i=>filter==='all'||i.cat===filter).map((i,idx)=>`<article class="item"><img src="${i.img}" alt=""><div class="itemmain"><div class="itemtop"><span>${i.name}</span><span class="price">$${i.price}</span></div><p>${i.desc}</p><button class="add" onclick="addToCart(${items.indexOf(i)})">Add to order</button></div></article>`).join('')}
+function renderMenu(filter='main'){const el=document.getElementById('menu');el.innerHTML=items.filter(i=>i.cat===filter).map((i,idx)=>`<article class="item"><img src="${i.img}" alt=""><div class="itemmain"><div class="itemtop"><span>${i.name}</span></div><p>${i.desc}</p><button class="add" onclick="addToCart(${items.indexOf(i)})">Add to selection</button></div></article>`).join('')}
 function filterMenu(f,b){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderMenu(f)}
 function addToCart(i){cart[i]=(cart[i]||0)+1;updateCount();showToast(items[i].name+' added to order')}
 function updateCount(){document.getElementById('count').textContent=Object.values(cart).reduce((a,b)=>a+b,0)}
@@ -97,6 +102,6 @@ function placeOrder(){cart={};updateCount();closeCart();showToast('Demo order re
 function selectPackage(name){const select=document.querySelector('#contact select');if(select){select.value=name==='Wedding Catering'?'Wedding':name==='Full-Service Events'?'Corporate event':'Private event'}document.getElementById('contact').scrollIntoView({behavior:'smooth'});showToast(name+' selected — tell us about your event')}
 function submitQuote(e){e.preventDefault();e.target.reset();showToast('Demo enquiry submitted ✓')}
 function showToast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),2500)}
-renderMenu();
+renderMenu('main');
 </script>
 </body></html>
