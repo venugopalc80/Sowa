@@ -31,6 +31,14 @@ footer{background:var(--black);color:#fff;padding:55px 28px 24px}.footerTop{max-
 <div class="links"><a href="#occasions">Occasions</a><a href="#menu">Menu</a><a href="#food">Food</a><a href="#process">Approach</a><a href="#gallery">Gallery</a><a href="#contact">Enquire</a></div>
 <div class="navRight"><div class="socialTop"><a href="https://www.instagram.com/sowa.sp/" target="_blank" rel="noopener">Instagram</a><a class="waTop" href="https://wa.me/18647478145?text=Hi%20SOWA%2C%20I%27d%20like%20to%20ask%20about%20catering." target="_blank" rel="noopener">WhatsApp</a></div><a class="phone" href="tel:+18647478145">+1 864 747 81 45</a><a class="navCta" href="#contact">Plan an event ↗</a><button class="menu" type="button" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav(this)">☰</button></div>
 </div></header>
+<div class="mobileNav" id="mobileNav" aria-hidden="true">
+<a href="#occasions" onclick="closeMobileNav()">Occasions</a>
+<a href="#menu" onclick="closeMobileNav()">Menu</a>
+<a href="#food" onclick="closeMobileNav()">Food</a>
+<a href="#process" onclick="closeMobileNav()">Approach</a>
+<a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+<a href="#contact" onclick="closeMobileNav()">Enquire</a>
+</div>
 <main>
 <section id="home" class="hero">
 <img class="heroPhoto" src="/assets/sowa-hero.jpg" alt="SOWA catering table and food">
@@ -47,6 +55,25 @@ footer{background:var(--black);color:#fff;padding:55px 28px 24px}.footerTop{max-
 <footer><div class="footerTop"><a class="footerBrand" href="#home"><img src="https://static.wixstatic.com/media/edf174_4d1d794ab7bc4adb9fdb97db464b1e8c~mv2.png/v1/fill/w_718,h_718,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/edf174_4d1d794ab7bc4adb9fdb97db464b1e8c~mv2.png" alt="SOWA"></a><div class="footerLinks"><div class="footerNav"><a href="#occasions">Occasions</a><a href="#menu">Menu</a><a href="#food">Food</a><a href="#gallery">Gallery</a><a href="#contact">Enquire</a></div><div class="footerSocial"><a href="https://www.instagram.com/sowa.sp/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://wa.me/18647478145?text=Hi%20SOWA%2C%20I%27d%20like%20to%20ask%20about%20catering." target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 23.8l6.4-1.7a11.8 11.8 0 0 0 5.5 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.1-1.2-6.1-3.5-8.2Z"></path></svg></a></div></div></div><div class="footerMeta"><span>© SOWA · Catering since 2014</span><span>Concept / demo for discussion</span></div></footer>
 <div class="toast" id="toast">Opening WhatsApp with your enquiry…</div>
 <script>
+function toggleMobileNav(btn){
+  const nav=document.getElementById('mobileNav');
+  const open=nav.classList.toggle('open');
+  nav.setAttribute('aria-hidden',String(!open));
+  btn.setAttribute('aria-expanded',String(open));
+  btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+  btn.textContent=open?'×':'☰';
+}
+function closeMobileNav(){
+  const nav=document.getElementById('mobileNav');
+  const btn=document.querySelector('.menu');
+  nav.classList.remove('open');
+  nav.setAttribute('aria-hidden','true');
+  if(btn){
+    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Open menu');
+    btn.textContent='☰';
+  }
+}
 function submitQuote(e){
   e.preventDefault();
   const fields=e.target.querySelectorAll('input, select, textarea');
